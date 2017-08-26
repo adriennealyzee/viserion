@@ -9,7 +9,6 @@ export default class SavedPages extends React.Component {
   }
 
   componentDidMount() {
-    // TODO: Get templates from userTemplates
     axios.get('http://localhost:8080/usertemplates/all')
       .then((res) => {
         this.setState({ templates: res.data });
@@ -22,10 +21,15 @@ export default class SavedPages extends React.Component {
     if (this.state.templates.length > 0){
       // Pull just the URLs
       images = this.state.templates.map((t) => {
+        const id = t['_id'];
         return (
-          <View>
-            <Text>{t['_id']}</Text>
-            { t.screenshot && <Image key={t['_id']} style={{width:400, height: 200}} source={require('./example.png')} resizeMode="contain" /> }
+          <View key={'v'+id}>
+            <Text key={'t'+id}>{t['_id']}</Text>
+            { t.screenshot &&
+            <Image key={'i'+id}
+                   style={{width:400, height: 200}}
+                   source={require('./example.png')}
+                   resizeMode="contain" /> }
           </View>
         )
       })
