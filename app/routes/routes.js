@@ -11,6 +11,7 @@ const File = require('../models/file');
 const UserTemplate = require('../models/userTemplate');
 const fileController = require('./fileController');
 const userTemplateController = require('./userTemplateController');
+const keys = require('../../config/keys');
 
 /*
  * /GET /:filename
