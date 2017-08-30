@@ -11,16 +11,6 @@ import { connect } from 'react-redux';
 import { addSite } from '../actions/index';
 import axios from 'axios';
 
-const styles = {
-  wrapper: {},
-  slides: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
-  }
-}
-
 var source =  [{uri: 'http://google.com'},{uri: 'http://nfl.com'},{uri: 'http://cnn.com'}];
 
 class ConfirmSite extends React.Component {
@@ -83,8 +73,18 @@ class ConfirmSite extends React.Component {
   }  
 }
 
+const styles = {
+  wrapper: {},
+  slides: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+  }
+};
+
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({addSite}, dispatch)
-}
+};
 
 export default connect(null, matchDispatchToProps)(ConfirmSite);

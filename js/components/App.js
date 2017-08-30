@@ -14,6 +14,7 @@ import ConfirmSite from './ConfirmSite';
 import ImageUploader from './ImageUploader';
 import SavedPages from './SavedPages';
 import SharedScreen from './ShareScreen';
+import AddPageComponent from './AddPageComponent';
 import Login from './Login';
 import SignUp from './SignUp';
 
@@ -41,6 +42,7 @@ class HomeScreen extends React.Component {
         <Text onPress={() =>{ navigate('ShareScreen')}} style={styles.defaultText,styles.selectedText}>Step 6: Share Link </Text>
         <Text onPress={() => { navigate('Image')}} style={styles.defaultText,styles.selectedText}>(Optional) Add Image</Text>
         <Text onPress={() => { navigate('Saved')}} style={styles.defaultText,styles.selectedText}>Saved Pages</Text>
+        <Text onPress={() => { navigate('AddPageComponent')}} style={styles.defaultText}>AddPageComponent Test</Text>
       </View>
     )
   }
@@ -58,6 +60,7 @@ const AppNavigator = StackNavigator({
   Saved: { screen: SavedPages },
   Login: { screen: Login },
   SignUp: { screen: SignUp },
+  AddPageComponent: { screen: AddPageComponent },
 });
 
 const styles = StyleSheet.create({

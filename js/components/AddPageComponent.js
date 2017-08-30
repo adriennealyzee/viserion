@@ -6,7 +6,7 @@ var {
   height: deviceHeight
 } = Dimensions.get('window');
 
-export default class PageScreen extends React.Component {
+export default class AddPageComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

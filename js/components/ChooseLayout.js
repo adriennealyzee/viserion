@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import { toggleLayout } from '../actions/index';
-// import { default as test } from '../../images/portfolio-template.jpg';
 
 class ChooseLayout extends React.Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class ChooseLayout extends React.Component {
   render() {
     return (
       <View style={styles.container}>        
-        <Text>Choose a Layout!</Text>
+        <Text>Choose some look and feels that you like</Text>
         { this.renderLayoutChoices() }
         <Button
           onPress={this.handleSubmit}
