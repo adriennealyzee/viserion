@@ -75,7 +75,7 @@ router.post('/submitchoice', function(req, res) {
  * 4) Stores templates into userTemplates
  */
 router.post('/generate', function(req, res) {
-  // TODO: Get user preferences
+  // Shape of user preferences example:
   // const userPreferences = { layouts: ['grid'], colors: ['blue', 'green'], title: "Chetan's Milk Shop", keywords: ['cooking']};
 
   const userPreferences = req.body;
