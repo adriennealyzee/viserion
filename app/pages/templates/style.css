@@ -6,6 +6,18 @@
     background: #ffd5c9;
 }
 
+.hero.hero-wrapper{
+    /*height: 80%;*/
+    height: calc(100vh - 157px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*.content.hero2body {*/
+    /*top: 145vh;*/
+/*}*/
+
 .site-title {
     margin: 0 0 1em;
     padding: 1em 0;
@@ -61,7 +73,7 @@
 .content {
     width: 90%;
     max-width: 1100px;
-    margin: 50px auto 50px auto;
+    margin: 50px auto 100px auto;
 }
 
 /*---------------
@@ -279,4 +291,13 @@ small {
 
 big {
     font-size: 125%;
+}
+
+bigger {
+    font-size: 350%;
+    font-weight: bold;
+}
+
+.color-inverse {
+    color: #fff;
 }

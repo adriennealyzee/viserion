@@ -39,16 +39,26 @@
         // example site preferences
         this.setState({ sitePreferences: {
           components: [
+//            {
+//              name: <Hero1 />,
+//              attr: {
+//                bgColor: '#eee',
+//                title: 'Custom title',
+//              }
+//            },
             {
-              name: <Hero1 />,
+              name: <Hero2 />,
               attr: {
-                bgColor: '#eee',
-                title: 'Custom title',
-              }
+                mainTitle: 'Music for everyone.',
+                subtitle: 'Premium for your whole family. Just $14.99.',
+                color1: '#f46b45',
+                color2: '#eea849',
+              },
             },
             {
               name: <ImageContent />,
               attr: {
+                reverse: false,
                 imageUrl: 'http://i.imgur.com/A1SGNax.png',
                 mainTitle: 'What\'s on Spotify?',
                 subtitle1: 'Music',
@@ -58,6 +68,20 @@
                 subtitle3: 'New Releases',
                 body3: 'Hear this week’s latest singles and albums, and check out what’s hot in the Top 50.',
               }
+            },
+            {
+              name: <ImageContent />,
+              attr: {
+                reverse: true,
+                imageUrl: 'http://i.imgur.com/A1SGNax.png',
+                mainTitle: 'It\'s easy.',
+                subtitle1: 'Search',
+                body1: 'Know what you want to listen to? Just search and hit play.',
+                subtitle2: 'Browse',
+                body2: 'Check out the latest charts, brand new releases and great playlists for right now.',
+                subtitle3: 'Discover',
+                body3: 'Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio.',
+              },
             },
             {
               name: <PinterestText />,
@@ -126,8 +150,6 @@
       }
     }
 
-//    class Hero2 extends
-
     class Hero1 extends React.Component {
       constructor(props) {
         super(props);
@@ -165,10 +187,47 @@
       }
     }
 
+    class Hero2 extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          mainTitle: this.props.mainTitle,
+          subtitle: this.props.subtitle,
+          color1: this.props.color1,
+          color2: this.props.color2,
+        }
+      }
+      render() {
+        return (
+          <div className="outer-wrap">
+            <header
+              className="hero hero-wrapper"
+              style={{
+                background: `${this.state.color1}`,
+                background: `-webkit-linear-gradient(to left, ${this.state.color2}, ${this.state.color1})`,
+                background: `linear-gradient(to left, ${this.state.color2}, ${this.state.color1})`,
+              }}
+            >
+            <div className="row">
+              {/* <div className="content"> */}
+              <div className="box">
+                <div className="centered color-inverse">
+                  <bigger>{this.state.mainTitle}</bigger>
+                  <h3>{this.state.subtitle}</h3>
+                </div>
+              </div>
+            </div>
+            </header>
+          </div>
+        )
+      }
+    }
+
     class ImageContent extends React.Component {
       constructor(props) {
         super(props);
         this.state = {
+          reverse: this.props.reverse,
           imageUrl: this.props.imageUrl,
           mainTitle: this.props.mainTitle,
           subtitle1: this.props.subtitle1,
@@ -183,25 +242,19 @@
       render() {
         return(
           <div className="content">
-            <div className="row middle-md">
-              <div className="col-xs-12 col-sm-7 col-md-5">
+            <div className={`row middle-md ${this.state.reverse ? 'reverse' : ''}`}>
+              <div className={this.state.reverse ? 'col-xs-12 col-sm-7 col-md-6 col-sm-offset-1' : 'col-xs-12 col-sm-7 col-md-5'}>
                 <div className="box">
                   <h1><EditableShortText value={this.state.mainTitle} /></h1>
-                  <p>
-                    <h3><EditableShortText value={this.state.subtitle1} /></h3>
-                    <EditableLongText body={this.state.body1} />
-                  </p>
-                  <p>
-                    <h3><EditableShortText value={this.state.subtitle2} /></h3>
-                    <EditableLongText body={this.state.body2} />
-                  </p>
-                  <p>
-                    <h3><EditableShortText value={this.state.subtitle3} /></h3>
-                    <EditableLongText body={this.state.body3} />
-                  </p>
+                  <h3><EditableShortText value={this.state.subtitle1} /></h3>
+                  <p><EditableLongText body={this.state.body1} /></p>
+                  <h3><EditableShortText value={this.state.subtitle2} /></h3>
+                  <p><EditableLongText body={this.state.body2} /></p>
+                  <h3><EditableShortText value={this.state.subtitle3} /></h3>
+                  <p><EditableLongText body={this.state.body3} /></p>
                 </div>
               </div>
-              <div className="col-xs-12 col-sm-4 col-sm-offset-1 col-md-6">
+              <div className={this.state.reverse ? 'col-xs-12 col-sm-4 col-md-5' : 'col-xs-12 col-sm-4 col-sm-offset-1 col-md-6'}>
                 <div className="box">
                   <EditableImage src={this.state.imageUrl} />
                 </div>
@@ -211,6 +264,7 @@
         )
       }
     }
+
 
     class EditableLongText extends React.Component {
       constructor(props) {
