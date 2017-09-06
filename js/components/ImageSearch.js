@@ -45,7 +45,7 @@ class ImageSearch extends React.Component {
   render() {
     return (
       <View>
-        <Button title="From Bing Search" />
+        <Text>Search for an image</Text>
         <TextInput
           style={{height: 40}}
           placeholder="enter image/s to search for"
