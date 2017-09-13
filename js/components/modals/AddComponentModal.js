@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { appendPrefs } from '../../actions/index';
 import componentMap from '../../componentMap';
+import styles from '../../styles'
 const io = require('socket.io-client');
 const tempURL = require('../../../images/components/text_image.png');
 
@@ -69,18 +70,18 @@ class AddPageModal extends React.Component {
   render() {
     return (
       <Animated.View
-        style={[styles.modal, { transform: [{ translateX: this.state.offset }] }]}
+        style={[styles.modalFull, { transform: [{ translateX: this.state.offset }] }]}
       >
         <View style={styles.innerModal}>
           <TouchableOpacity onPress={this.closeModal}>
-            <Text style={styles.center}>Close Menu</Text>
+            <Text style={styles.centered}>Close Menu</Text>
           </TouchableOpacity>
           <ScrollView>
             {this.state.compList.map((comp, index) =>
               <View key={index}>
                 <Text
                   onPress={this.handleAdd.bind(this, comp.attr)}
-                  style={styles.bigText}>{comp.displayName}</Text>
+                  style={[{ fontSize: 20, fontFamily: 'Avenir-Medium' }]}>{comp.displayName}</Text>
                 {/*<TouchableOpacity*/}
                   {/*onPress={this.handleAdd.bind(this, comp.attr)}*/}
                 {/*>*/}
@@ -92,51 +93,11 @@ class AddPageModal extends React.Component {
               </View>)
             }
           </ScrollView>
-        </View>
+         </View>
       </Animated.View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  flexContainer: {
-    flex: 1,
-  },
-  center: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-  webView: {
-    padding: 10,
-    width: '100%',
-  },
-  modal: {
-    backgroundColor: 'rgba(0,0,0,.5)',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    alignItems: 'center',
-  },
-  innerModal: {
-    width: '80%',
-    backgroundColor: '#fff',
-    padding: 10,
-    position: 'relative',
-    top: '5%',
-    borderRadius: 10,
-  },
-  bigText: {
-    fontSize: 20,
-  },
-    selected: {
-    opacity: 0.5,
-    backgroundColor: '#FFF',
-  },
-});
 
 function mapStateToProps({ preferences }) {
   return { preferences };

@@ -97,7 +97,7 @@ class ChooseLayout extends React.Component {
             underlayColor='#1D59BF'
             onPress={this.handleSubmit}
           >
-            <Text style={ [styles.buttonText, { color: '#eee', }] }>Continue</Text>
+            <Text style={ styles.buttonText }>Continue</Text>
           </TouchableHighlight>
         </View>
       </View>

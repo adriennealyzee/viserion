@@ -16,6 +16,7 @@ export default styles = StyleSheet.create({
   centered: {
     justifyContent: 'center',
     alignItems: 'center',
+    textAlign: 'center',
   },
   content: {
     padding: 10,
@@ -79,6 +80,9 @@ export default styles = StyleSheet.create({
     fontFamily: 'Avenir-Book',
     color: '#fff'
   },
+  textDark: {
+    fontFamily: 'Avenir-Book',
+  },
   title: {
     fontFamily: 'Avenir-Heavy',
     fontSize: 32,
@@ -91,9 +95,16 @@ export default styles = StyleSheet.create({
   muted: {
     color: '#aaa'
   },
+  continueButton: {
+    backgroundColor: '#3E84FB',
+    borderRadius: 30,
+    width: 120,
+    height: 37,
+  },
   buttonText: {
     fontFamily: 'Avenir-Heavy',
-    color: '#fff'
+    color: '#fff',
+    fontSize: 16,
   },
 
   // Modals
@@ -139,7 +150,9 @@ export default styles = StyleSheet.create({
   absoluteBottom: {
     position: 'absolute',
     bottom: 10,
-    right: (Dimensions.get('window').width / 3), // center
+    left: 0,
+    right: 0,
+    alignItems: 'center',
   },
   absoluteRight: {
     position: 'absolute',
@@ -182,18 +195,41 @@ export default styles = StyleSheet.create({
     margin: 1,
     padding: 10,
   },
-  continueButton: {
-    backgroundColor: '#3E84FB',
-    borderRadius: 30,
-    width: 110,
-    height: 35,
+
+  // Modals
+  webView: {
+    padding: 10,
+    width: '100%',
+  },
+  modalFull: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    alignItems: 'center',
+  },
+  modal: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    alignItems: 'center',
+  },
+  innerModal: {
+    width: '90%',
+    height: '80%',
+    backgroundColor: '#fff',
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    position: 'relative',
+    top: '5%',
+    borderRadius: 10,
   },
 
-//  Swiper
-//   slides: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: 'rgba(0,0,0,0)',
-//   }
 });

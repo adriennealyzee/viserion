@@ -64,7 +64,7 @@ class ConfirmSite extends React.Component {
           </Swiper>
           <View style={styles.absoluteBottom}>
             <TouchableHighlight
-              style={ [styles.buttonCentered, styles.continueButton, {width: 120} ] }
+              style={ [styles.buttonCentered, styles.continueButton, {width: 145} ] }
               underlayColor='#1D59BF'
               onPress={this.handlePress.bind(this, this.state.index)}
             >
