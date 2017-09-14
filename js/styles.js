@@ -95,6 +95,9 @@ export default styles = StyleSheet.create({
     fontFamily: 'Avenir-Heavy',
     color: '#fff'
   },
+  iconText: {
+    fontSize: 12,
+  },
 
   // Modals
   modal: {
@@ -221,13 +224,6 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-//  Swiper
-//   slides: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: 'rgba(0,0,0,0)',
-//   }
   // ImageSearch
   scrollGrid: {
     flex: 1,
@@ -244,5 +240,26 @@ export default styles = StyleSheet.create({
     margin: 10,
     width: 80,
     height: 80
+  },
+
+  // Share link
+    modalBottom: {
+      // backgroundColor: 'rgba(60,72,101,1)',
+      position: 'absolute',
+      top: Dimensions.get('window').height / 1.75 ,
+      right: 0,
+      bottom: 0,  
+      left: 0,
+      width: '100%',
+      alignItems: 'center',
+      height: Dimensions.get('window').height * 0.1,
+  },
+  innerModalBottom:{
+    width: Dimensions.get('window').width-10,
+    backgroundColor: 'rgba(60,72,101,1)',
+    padding: 10,
+    position: 'relative',
+    top: '5%',
+    borderRadius: 10
   },
 });
