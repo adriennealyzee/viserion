@@ -8,6 +8,7 @@ import OrderModal from './modals/OrderModal';
 import AddPageModal from './modals/AddComponentModal';
 import PricingListModal from './modals/PricingListModal';
 import ListModal from './modals/ListModal';
+import ShareModal from './modals/ShareModal';
 import { ColorPicker, TriangleColorPicker } from 'react-native-color-picker';
 import { connect } from 'react-redux';
 import { assignUser } from '../actions/index';
@@ -24,6 +25,7 @@ class UserEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      shareModal: false,
       shortTextModal: false,
       shortTextValue: '',
       imageModal: false,
@@ -90,7 +92,6 @@ class UserEdit extends React.Component {
     });
 
     socket.on('getPrefsUserEdit', (message) => {
-      console.log('userEdit', message);
       socket.emit('sendPrefsFromUserEdit', this.props.preferences);
     });
   }
@@ -106,11 +107,10 @@ class UserEdit extends React.Component {
   handleSubmit() {
     this.props.updateSite();
     this.props.assignUser();
-    const { navigate } = this.props.navigation; 
-    navigate('ShareScreen');
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.basicContainer}>
         <View style={styles.basicContainer}>
@@ -160,8 +160,13 @@ class UserEdit extends React.Component {
             <PricingListModal
               details={this.state.pricingDetails}
               Id={this.state.pricingListId}
-              closeModal={() =>this.setState({pricingListModal: false})}
+              closeModal={() => this.setState({pricingListModal: false})}
             /> : null }
+          { this.state.shareModal ?
+            <ShareModal
+              closeModal={() => this.setState({shareModal: false})}
+            /> : null }
+
         </View>
         <View style={styles.absoluteBottom}>
           <TouchableHighlight
@@ -192,7 +197,7 @@ class UserEdit extends React.Component {
           <TouchableHighlight
             style={[styles.sideButton, styles.buttonCentered]}
             underlayColor='#3D6DF9'
-            onPress={() => { console.log('Share link goes here!') }}
+            onPress={() => { this.setState({shareModal: true}) }}
           >
             <Ionicons name="ios-share-outline" color="#fff" size={32} />
           </TouchableHighlight>
