@@ -17,8 +17,7 @@ class ShareScreen extends React.Component {
   };
   
   componentDidMount(){
-    console.log('component did mount');
-    this.shortenURL();
+    // this.shortenURL();
   }
 
   shortenURL(){
@@ -54,20 +53,20 @@ class ShareScreen extends React.Component {
           <Text style={styles.screenName}>SHARE</Text>
           <View style={styles.message} >
             <Text>{message}</Text>
-          </View>  
+          </View>
           <TouchableHighlight onPress={this.notify.bind(this, selection='', message)}>
             <View style={styles.icons} >
               <Image style={styles.image} source={require('../../images/twitter.png')} />
               <Image style={styles.image} source={require('../../images/slack.jpeg')} />
               <Image style={styles.image} source={require('../../images/fb.jpg')} />
               <Image style={styles.image} source={require('../../images/email.jpg')} />
-            </View>  
-          </TouchableHighlight>             
+            </View>
+          </TouchableHighlight>
         </View>
       )
     } else {
       return( <Text>Loading...</Text>);
-    }  
+    }
   };
 }
 
