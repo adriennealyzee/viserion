@@ -7,7 +7,7 @@ export default class Prescreen extends React.Component {
     return(
       <View style={[styles.container, {backgroundColor: '#222A3C'}]}>
         <View style={[{ flex: 5 }, styles.centered]}>
-          <Text style={{color: '#fff', fontFamily: 'AvenirNext-Regular', fontSize: 37}}>QuikPages</Text>
+          <Text style={{color: '#fff', fontFamily: 'AvenirNext-Regular', fontSize: 43}}>Spindle</Text>
         </View>
         <View style={{ flex: 2 }}>
           <Image
