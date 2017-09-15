@@ -235,9 +235,6 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  content: {
-    paddingVertical: 20,
-  },
   pic: {
     backgroundColor: '#CCC',
     margin: 10,
@@ -246,16 +243,17 @@ export default styles = StyleSheet.create({
   },
 
   // Share link
-    modalBottom: {
-      // backgroundColor: 'rgba(60,72,101,1)',
-      position: 'absolute',
-      top: Dimensions.get('window').height / 1.75 ,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      width: '100%',
-      alignItems: 'center',
-      height: Dimensions.get('window').height * 0.1,
+  modalBottom: {
+    // backgroundColor: 'rgba(60,72,101,1)',
+    position: 'absolute',
+    top: Dimensions.get('window').height / 1.75 ,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    alignItems: 'center',
+    height: Dimensions.get('window').height * 0.1,
+
   },
   innerModalBottom:{
     width: Dimensions.get('window').width-10,
