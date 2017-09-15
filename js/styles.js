@@ -93,7 +93,8 @@ export default styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'Avenir-Heavy',
-    color: '#fff'
+    color: '#fff',
+    fontSize: 19,
   },
   iconText: {
     fontSize: 12,
@@ -205,8 +206,8 @@ export default styles = StyleSheet.create({
   continueButton: {
     backgroundColor: '#3E84FB',
     borderRadius: 30,
-    width: 110,
-    height: 35,
+    width: 150,
+    height: 45,
   },
 
   // Inputs
@@ -248,7 +249,7 @@ export default styles = StyleSheet.create({
       position: 'absolute',
       top: Dimensions.get('window').height / 1.75 ,
       right: 0,
-      bottom: 0,  
+      bottom: 0,
       left: 0,
       width: '100%',
       alignItems: 'center',

@@ -14,8 +14,7 @@ module.exports = (rawPreferencesObj) => {
 <script src="https://fb.me/react-dom-15.0.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
-
-<!--<script src="http://ec2-54-203-8-222.us-west-2.compute.amazonaws.com:8080/socket.io/socket.io.js"></script>-->
+<!--<script src="http://spindleapp.com:8080/socket.io/socket.io.js"></script>-->
 <style type="text/css">
 /*---------------
       #Header
@@ -327,12 +326,13 @@ bigger {
 
 <script type="text/babel">
   const socket = io('http://127.0.0.1:8080');
+  //const socket = io('http://spindleapp.com:8080');
   var room;
   if (location) {
     //alert(location.href.split('/')[3])
     room = location.href.split('/')[3];
   }
-//  const socket = io('http://ec2-54-203-8-222.us-west-2.compute.amazonaws.com:8080');
+
   // ID generation
   let lastId = 0;
   function newId(prefix='id') {
