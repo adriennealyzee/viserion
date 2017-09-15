@@ -144,8 +144,10 @@ export default styles = StyleSheet.create({
   // Buttons
   absoluteBottom: {
     position: 'absolute',
-    bottom: 10,
-    right: (Dimensions.get('window').width / 3), // center
+    bottom: 40,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
   },
   absoluteRight: {
     position: 'absolute',
