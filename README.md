@@ -3,13 +3,13 @@
 Create webpages on your iPhone in 5 minutes.
  
 ## Getting started ##
-To install: `npm install`
+1. To install: `npm install`
 
-To run React Native Expo: `npm start`
+2. To run React Native Expo: `npm start`
 
-To run server: `npm run server`
+3. To run server: `npm run server`
 
-You may need to: 
+4. You may need to install dependencies: 
 
 `brew install watchman`
 
