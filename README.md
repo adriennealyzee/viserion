@@ -1,6 +1,6 @@
-# Viserion #
+# Spindle #
 
-Generate landing pages via a mobile app.
+Create webpages on your iPhone in 5 minutes.
  
 ## Getting started ##
 To install: `npm install`
@@ -20,7 +20,7 @@ and
 ## Notes ##
 
 
-## Dev Notes ##
+## Developer Notes ##
 
 To render website templates on your machine: 
 
